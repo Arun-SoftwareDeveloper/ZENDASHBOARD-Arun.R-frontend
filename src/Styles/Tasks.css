@@ -1,0 +1,33 @@
+.task-text {
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: cursive;
+  cursor: pointer;
+  position: relative;
+  left: 100px;
+  top: 150px;
+  transform: translateX(-50%);
+  width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  font-size: 40px;
+  text-align: center;
+  font-weight: lighter;
+  animation: slideIn 3s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+  0% {
+    color: blueviolet;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

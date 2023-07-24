@@ -1,0 +1,25 @@
+.application-text {
+  color: white;
+  position: relative;
+  left: 200px;
+  top: 150px;
+  font-family: cursive;
+  font-weight: lighter;
+  animation: slideIn 3s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+  0% {
+    color: blueviolet;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}

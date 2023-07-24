@@ -1,0 +1,67 @@
+.create-query-btn {
+  color: white;
+  position: relative;
+  left: 230px;
+  top: 150px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: lighter;
+  font-size: 30px;
+  cursor: pointer;
+  background-color: azure;
+  color: black;
+  border-radius: 10px;
+}
+
+.create-query-btn i {
+  background-color: azure;
+  color: black;
+}
+
+.queries-no-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  height: 200px;
+}
+
+.queries-no-content h1 {
+  font-size: 35px;
+  font-family: cursive;
+  font-style: italic;
+  font-weight: lighter;
+  animation: comingSoonAnimation 3s ease-in-out infinite,
+    colorChange 3s infinite alternate;
+}
+
+@keyframes comingSoonAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+    color: rgb(177, 96, 96);
+  }
+  50% {
+    color: rgb(119, 165, 88);
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: rgb(177, 96, 96);
+  }
+  33% {
+    color: rgb(119, 165, 88);
+  }
+  66% {
+    color: rgb(193, 81, 157);
+  }
+  100% {
+    color: orange;
+  }
+}

@@ -1,0 +1,42 @@
+.mockinterview-container {
+  position: relative;
+  top: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid gray;
+  box-shadow: 3px 3px 3px 1px (#808080);
+}
+
+.mockinterview-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mockinterview-table th,
+.mockinterview-table td {
+  padding: 8px;
+  border: 1px solid black;
+  font-size: 15px;
+}
+
+.mockinterview-table th {
+  font-weight: bold;
+  background-color: #f1f1f1;
+}
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.pagination-container select {
+  margin: 0 10px;
+}
+
+.mockinterview-table th {
+  color: black;
+  font-size: 20px;
+}

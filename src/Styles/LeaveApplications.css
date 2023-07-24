@@ -1,0 +1,90 @@
+.leaveapplications-add {
+  position: relative;
+  left: 260px;
+  top: 160px;
+}
+
+.leaveapplications-add-btn {
+  font-size: 30px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.leaveapplications-add-btn i {
+  background-color: whitesmoke;
+  color: black;
+  margin-right: 10px;
+}
+
+.leaveapplications-form {
+  position: relative;
+  left: 260px;
+  top: 160px;
+  border: 2px solid gray;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.leaveapplications-form label {
+  font-size: 20px;
+  color: rgb(130, 145, 172);
+}
+
+.leaveapplications-form input {
+  width: 300px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 6px;
+}
+
+.leaveapplications-form textarea {
+  width: 300px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 6px;
+}
+
+.leaveapplications-create-btn {
+  background-color: dodgerblue;
+  padding: 10px;
+  width: 80px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.leaveapplications-cancel-btn {
+  background-color: rgb(225, 100, 71);
+  padding: 10px;
+  width: 80px;
+  border-radius: 5px;
+  margin-left: 140px;
+  cursor: pointer;
+}
+
+.leaveapplications-form {
+  position: relative;
+  left: 260px;
+  top: 160px;
+  border: 2px solid gray;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  flex-direction: column; /* Added */
+}
+
+.add-leave-title {
+  font-size: 34px;
+  margin-top: 20px; /* Added */
+  margin-bottom: 20px; /* Added */
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bolder;
+}

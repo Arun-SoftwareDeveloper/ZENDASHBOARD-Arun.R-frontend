@@ -1,0 +1,31 @@
+.requirement-text {
+  color: white;
+  position: relative;
+  left: 680px;
+  top: 150px;
+  font-family: cursive;
+  font-weight: lighter;
+  font-size: 35px;
+}
+
+@keyframes comingSoonAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+    color: red;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+    color: rgb(197, 217, 64);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+    color: green;
+  }
+}
+
+.requirement-text {
+  animation: comingSoonAnimation 3s ease-in-out infinite;
+}

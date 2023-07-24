@@ -1,0 +1,108 @@
+/* LoginForm.css (or your preferred CSS file) */
+
+.header {
+  text-align: center;
+}
+
+.background-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+  width: 100%; /* Set the height of the container to at least the viewport height */
+}
+
+.login-form {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+.login-container {
+  position: fixed;
+  left: 100px;
+  top: 180px;
+  width: 450px;
+  background-color: white;
+  height: 300px;
+  border-radius: 10px;
+}
+.login-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: black;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.signup {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.forgot {
+  text-align: center;
+  margin-top: 10px;
+  display: block;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.forgot:hover {
+  text-decoration: underline;
+  color: #2d6aab;
+}
+
+.back-btn {
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.zen-logo-login {
+  width: 70px;
+  position: relative;
+  left: 630px;
+  top: 60px;
+}
+
+.forgot {
+  background-color: whitesmoke;
+}
+
+.signup {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.reg {
+  background-color: whitesmoke;
+  color: dodgerblue;
+}
+
+.reg:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #2d6aab;
+}
