@@ -139,7 +139,10 @@ const LoginForm = () => {
               </Form>
             )}
           </Formik>
-          <ToastContainer position="top-right" />
+          <ToastContainer
+            position="top-right"
+            style={{ backgroundColor: "whitesmoke" }}
+          />
         </Container>
       </div>
     </>
