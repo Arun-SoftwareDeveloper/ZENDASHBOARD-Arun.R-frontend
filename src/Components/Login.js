@@ -8,7 +8,7 @@ import zenlogin from "../Images/Login-Background.jpg";
 // import zentext from "../Images/zentext.jfif";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
-import { Container, Row, Col, Image, Button } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 
 const LoginForm = () => {
   const navigate = useNavigate(); // Corrected the use of useNavigate

@@ -100,6 +100,7 @@ function CreateQuery() {
             Create
           </button>
           <button className="cancel">Cancel</button>
+          {message && <p className="message">{message}</p>}
         </div>
       </form>
     </div>

@@ -10,7 +10,7 @@ function Class() {
   const [sourceCode, setSourceCode] = useState("");
   const [deployURL, setDeployURL] = useState("");
   const [isHeightChanged, setIsHeightChanged] = useState(false);
-  const [sessiondata, setSessionData] = useState("");
+  const [sessiondata, setSessionData] = useState([]);
   const handleArrowClick = () => {
     setIsHeightChanged(!isHeightChanged);
     setShowSourceCode(false);
@@ -42,7 +42,7 @@ function Class() {
   };
 
   const renderContent = () => {
-    const session = sessionData.find(
+    const session = sessiondata.find(
       (session) => session.number === selectedSession
     );
     if (!session) {
