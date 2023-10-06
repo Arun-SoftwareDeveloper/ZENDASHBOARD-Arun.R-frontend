@@ -12,7 +12,9 @@ function CreateQuery() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/api/queries");
+      const response = await axios.post(
+        "https://zendashboard-backend.onrender.com/api/queries"
+      );
       console.log(response);
       if (response.data && response.data.message) {
         setMessage(response.data.message);

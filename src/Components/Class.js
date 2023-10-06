@@ -78,7 +78,9 @@ function Class() {
   useEffect(() => {
     const fetchSessionData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/sessiondata");
+        const response = await fetch(
+          "https://zendashboard-backend.onrender.com/sessiondata"
+        );
         if (response.ok) {
           const data = await response.json();
           setSessionData(data);
