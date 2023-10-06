@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "../Styles/Register.css";
 import zenreg from "../Images/zen-register.jpg";
 import { Link } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -87,8 +88,30 @@ function Register() {
           <br />
           <br />
           <button type="submit">Register</button>
+          <h4
+            className="already-a -user"
+            style={{
+              backgroundColor: "white",
+              color: "dodgerblue",
+              fontWeight: "normal",
+              width: "100%",
+            }}
+          >
+            Already a User?{" "}
+            <Link
+              to="/"
+              style={{
+                backgroundColor: "white",
+                color: "dodgerblue",
+                fontFamily: "sans-serif",
+              }}
+            >
+              Login
+            </Link>
+          </h4>
         </form>
       </div>
+      <ToastContainer position="top-right" />
     </>
   );
 }

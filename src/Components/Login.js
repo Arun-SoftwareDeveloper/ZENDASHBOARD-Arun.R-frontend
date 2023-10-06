@@ -1,35 +1,37 @@
-import React, { useState } from "react";
-import { toast } from "react-toastify";
-import "../Styles/Login.css";
-import Zenlogo from "../Images/ZenClass-logo.png";
-import zenlogin from "../Images/Login-Background.jpg";
-import zentext from "../Images/zentext.jfif";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Formik, Field, ErrorMessage, Form } from "formik";
+import * as Yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
+import "../Styles/Login.css";
+import zenlogin from "../Images/Login-Background.jpg";
+// import zentext from "../Images/zentext.jfif";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-toastify/dist/ReactToastify.css";
+import { Container, Row, Col, Image, Button } from "react-bootstrap";
 
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Corrected the use of useNavigate
+  const validationSchema = Yup.object().shape({
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+    password: Yup.string().required("Password is required"),
+  });
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
+  const handleLogin = async (values, { setSubmitting }) => {
     try {
       const response = await fetch("http://localhost:5000/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
+        body: JSON.stringify(values),
       });
 
       if (response.ok) {
         const data = await response.json();
         console.log("Login successful");
-        // Save the token to localStorage
         localStorage.setItem("token", data.token);
 
         toast.success("Login successful!", {
@@ -42,14 +44,22 @@ const LoginForm = () => {
           progress: undefined,
         });
 
-        // Redirect to the "/class" route after successful login
-        navigate("/class");
+        // Redirect to another page after successful login
+        // Example: navigate("/class");
+        navigate("/class"); // Use navigate here
       } else if (response.status === 404) {
-        // User not found, handle the error
         throw new Error("User not found");
       } else {
-        // Other errors, handle the error
         const error = await response.json();
+        toast.error(error.error, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
         throw new Error(error.error);
       }
     } catch (error) {
@@ -63,6 +73,8 @@ const LoginForm = () => {
         draggable: true,
         progress: undefined,
       });
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -70,42 +82,62 @@ const LoginForm = () => {
     <>
       <div
         className="background-image"
-        style={{ backgroundImage: `url(${zenlogin})` }}
-      ></div>
-      <img src={zentext} alt="zentext"></img>
-      <div className="login-container">
-        <form className="login-form" onSubmit={handleLogin}>
-          <input
-            className="login-input"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            className="login-input"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <Link to="/class">
-            <button className="login-button" type="submit">
-              Login
-            </button>
-          </Link>
-          <p className="signup">
-            Don't have an account?
-            <Link to="/register">
-              <span className="reg">register</span>
-            </Link>
-          </p>
-          {/* <Link to="forgotpassword">
-            <span className="forgot">Forgot Password?</span>
-          </Link> */}
-        </form>
+        style={{
+          backgroundImage: `url(${zenlogin})`,
+          backgroundColor: "whitesmoke",
+        }}
+      >
+        {/* <Image src={zentext} alt="zentext" fluid /> */}
+        <Container className="login-container">
+          <Formik
+            initialValues={{
+              email: "",
+              password: "",
+            }}
+            validationSchema={validationSchema}
+            onSubmit={handleLogin}
+          >
+            {({ isSubmitting }) => (
+              <Form className="login-form">
+                <Field
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  className="login-input"
+                />
+                <ErrorMessage name="email" component="div" className="error" />
+
+                <Field
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  className="login-input"
+                />
+                <ErrorMessage
+                  name="password"
+                  component="div"
+                  className="error"
+                />
+
+                <Button
+                  className="login-button"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  Login
+                </Button>
+
+                <p className="signup" style={{ color: "dodgerblue" }}>
+                  Don't have an account?
+                  <Link to="/register">
+                    <span className="reg">Register</span>
+                  </Link>
+                </p>
+              </Form>
+            )}
+          </Formik>
+          <ToastContainer position="top-right" />
+        </Container>
       </div>
     </>
   );
