@@ -31,6 +31,7 @@
   padding: 8px;
   text-decoration: none; /* Remove default link underline */
   transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  color: white;
 }
 
 .sidebar-contents i {
